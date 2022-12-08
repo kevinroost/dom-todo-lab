@@ -11,10 +11,11 @@ submitButt.addEventListener('click', function() {
   if (inpEl.value) {
     listEl.append(li)
   }
-  li.addEventListener('click', function() {
-    li.remove()
-  })
   inpEl.value = null
+})
+
+listEl.addEventListener('click', function(evt) {
+  evt.target.remove()
 })
 
 resetButt.addEventListener('click', function() {
@@ -23,7 +24,3 @@ resetButt.addEventListener('click', function() {
   }
   inpEl.value = null
 })
-
-// listEl.firstChild.addEventListener('click', function() {
-//   listEl.firstChild.remove()
-// })
