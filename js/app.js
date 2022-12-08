@@ -2,6 +2,7 @@ const inpEl = document.querySelector('#input')
 const submitButt = document.querySelector('#submit-button')
 const resetButt = document.querySelector('#reset-button')
 const listEl = document.querySelector('#todo-list')
+const firstTask = document.querySelector('listEl.firstChild')
 
 
 submitButt.addEventListener('click', function() {
@@ -9,8 +10,10 @@ submitButt.addEventListener('click', function() {
   li.textContent = inpEl.value
   if (inpEl.value) {
     listEl.append(li)
-    li.classList.add('tasks')
   }
+  li.addEventListener('click', function() {
+    li.remove()
+  })
   inpEl.value = null
 })
 
@@ -20,3 +23,7 @@ resetButt.addEventListener('click', function() {
   }
   inpEl.value = null
 })
+
+// listEl.firstChild.addEventListener('click', function() {
+//   listEl.firstChild.remove()
+// })
